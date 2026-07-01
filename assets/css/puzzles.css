@@ -1,0 +1,29 @@
+.puzzle-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+details.solution summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: 600;
+  list-style: none;
+}
+details.solution summary::-webkit-details-marker { display: none; }
+
+details.solution p {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+details.solution pre {
+  background: rgba(0,0,0,0.05);
+  padding: 8px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+details.solution code {
+  font-family: Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  line-height: 1.3;
+}

@@ -1,0 +1,67 @@
+.content {
+  position: relative;
+  z-index: 1;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+}
+
+.card {
+  max-width: 720px;
+  padding: 48px 44px;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.12);
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    background 2s ease,
+    color 2s ease,
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+body.loaded .card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+p { margin: 0; font-size: 1.05rem; line-height: 1.65; }
+
+.links { margin-top: 28px; }
+
+.links a {
+  position: relative;
+  margin-right: 18px;
+  font-size: 0.95rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.card a {
+  position: relative;
+  font-size: 0.95rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.links a::after, .card a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.links a:hover, .card a:hover { color: var(--text); }
+.links a:hover::after, .card a:hover::after { transform: scaleX(1); }
